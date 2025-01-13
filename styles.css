@@ -1,0 +1,295 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+h1, h2 {
+    color: #333;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+header {
+    background: linear-gradient(to right, #007bff, #00aaff);
+    color: #a00a0a;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease;
+}
+
+header:hover {
+    background: linear-gradient(to right, #006bb3, #0099cc);
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+nav a.active {
+    color: #ffd700;
+}
+
+
+.hero {
+    background-image: url('https://source.unsplash.com/1600x900/?soccer'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+    color: rgb(136, 126, 126);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+}
+
+
+.content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.content:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.fixtures-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.fixtures-table th,
+.fixtures-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.fixtures-table th {
+    background-color: #6590e0;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.fixtures-table tr:nth-child(even) {
+    background-color: #f8f7f7;
+}
+
+.fixtures-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+form input,
+form select,
+form button {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #007bff;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+form button:active {
+    background-color: #004080;
+}
+
+
+label.checkbox-label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+.success-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer p a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    nav {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .fixtures-table th,
+    .fixtures-table td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    form input,
+    form select,
+    form button {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 15px;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
+

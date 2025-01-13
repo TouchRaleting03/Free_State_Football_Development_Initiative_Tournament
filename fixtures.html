@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fixtures - Junior League Soccer</title>
+  <link rel="stylesheet" href="styles.css"> 
+  <script src="scripts.js" defer></script> 
+</head>
+<body>
+  <header>
+    <h1>Junior League Soccer</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="fixtures.html" class="active">Fixtures</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Upcoming Fixtures</h1>
+    <p>Get ready for the exciting matches ahead!</p>
+  </div>
+
+  <div class="content">
+    <h2>Upcoming Matches</h2>
+    <table class="fixtures-table">
+      <thead>
+        <tr>
+          <th>Match Date</th>
+          <th>Team A</th>
+          <th>Team B</th>
+          <th>Time</th>
+          <th>Location</th>
+          <th>Live Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="match-1">
+          <td>January 20, 2025</td>
+          <td>Team A</td>
+          <td>Team B</td>
+          <td>3:00 PM</td>
+          <td>Soccer Field 1</td>
+          <td>
+            <span id="score-1">0 - 0</span> 
+            <button class="update-score" data-match="1">Update Score</button>
+          </td>
+        </tr>
+        <tr id="match-2">
+          <td>January 27, 2025</td>
+          <td>Team C</td>
+          <td>Team D</td>
+          <td>4:30 PM</td>
+          <td>Soccer Field 2</td>
+          <td>
+            <span id="score-2">0 - 0</span>
+            <button class="update-score" data-match="2">Update Score</button>
+          </td>
+        </tr>
+        <!-- Add more fixtures here -->
+      </tbody>
+    </table>
+  </div>
+
+  <footer>
+    <p>Contact us at <a href="mailto:info@NalaMahlalaCharity.com">info@NalaMahlalaCharity.com</a></p>
+  </footer>
+</body>
+</html>

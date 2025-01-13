@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Soccer League Registration</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Registration</a>
+        <a href="fixtures.html">Fixtures</a>
+      </nav>
+  </header>
+
+  <div class="form-container">
+    <form id="registration-form" action="#" method="post">
+      <h2>Player Information</h2>
+
+      <label for="player-name">Player Name:</label>
+      <input type="text" id="player-name" name="player-name" required>
+
+    
+      <label for="player-age">Player Age:</label>
+      <input type="number" id="player-age" name="player-age" required>
+
+      
+      <label for="team">Preferred Team:</label>
+      <select id="team" name="team" required>
+        <option value="team-a">Team A</option>
+        <option value="team-b">Team B</option>
+      </select>
+
+      <label for="Team colors">Team color</label>
+      <input type="text" name="color" required>
+
+      <label for="Technical team">Technical team members</label>
+      <input type="number" required>
+
+     
+      <label for="guardian-name">Parent/Guardian Name:</label>
+      <input type="text" id="guardian-name" name="guardian-name" required>
+
+      
+      <label for="guardian-contact">Parent/Guardian Contact:</label>
+      <input type="tel" id="guardian-contact" name="guardian-contact" required>
+
+     
+      <label class="checkbox-label">
+        <input type="checkbox" name="terms" id="terms" required> 
+        I agree to the terms and conditions
+    </label>
+      
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>Contact us at <a href="mailto:info@NalaMahlalaCharity.com">info@NalaMahlalaCharity.com</a></p>
+  </footer>
+</body>
+</html>
