@@ -10,50 +10,45 @@
   <header>
     <h1>Soccer League Registration</h1>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="register.html">Registration</a>
-        <a href="fixtures.html">Fixtures</a>
-      </nav>
+      <a href="index.html">Home</a>
+      <a href="register.html">Registration</a>
+      <a href="fixtures.html">Fixtures</a>
+    </nav>
   </header>
 
   <div class="form-container">
     <form id="registration-form" action="#" method="post">
       <h2>Player Information</h2>
 
-      <label for="player-name">Player Name:</label>
-      <input type="text" id="player-name" name="player-name" required>
+      <label for="manager-name">Manager Name:</label>
+      <input type="text" id="manager-name" name="manager-name" placeholder="Enter manager name" required>
 
-    
-      <label for="player-age">Player Age:</label>
-      <input type="number" id="player-age" name="player-age" required>
+      <label for="num-players">How many players:</label>
+      <input type="number" id="num-players" name="num-players" placeholder="Enter number of players" required>
 
-      
       <label for="team">Preferred Team:</label>
       <select id="team" name="team" required>
         <option value="team-a">Team A</option>
         <option value="team-b">Team B</option>
       </select>
 
-      <label for="Team colors">Team color</label>
-      <input type="text" name="color" required>
+      <label for="team-color">Team Color:</label>
+      <input type="text" id="team-color" name="team-color" placeholder="Enter team color" required>
 
-      <label for="Technical team">Technical team members</label>
-      <input type="number" required>
+      <label for="tech-team-members">Technical Team Members:</label>
+      <input type="number" id="tech-team-members" name="tech-team-members" placeholder="Enter number of members" required>
 
-     
-      <label for="guardian-name">Parent/Guardian Name:</label>
-      <input type="text" id="guardian-name" name="guardian-name" required>
+      <label for="head-coach-name">Head Coach Name:</label>
+      <input type="text" id="head-coach-name" name="head-coach-name" placeholder="Enter coach name" required>
 
-      
-      <label for="guardian-contact">Parent/Guardian Contact:</label>
-      <input type="tel" id="guardian-contact" name="guardian-contact" required>
+      <label for="head-coach-contact">Head Coach Contact:</label>
+      <input type="tel" id="head-coach-contact" name="head-coach-contact" placeholder="Enter contact number" required>
 
-     
       <label class="checkbox-label">
-        <input type="checkbox" name="terms" id="terms" required> 
-        I agree to the terms and conditions
-    </label>
-      
+        <input type="checkbox" name="terms" id="terms" required>
+        I agree to the <a href="indemnity-form.pdf" target="_blank">terms and conditions</a>.
+      </label>
+
       <button type="submit">Register</button>
     </form>
   </div>

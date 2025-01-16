@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fixtures - Junior League Soccer</title>
-  <link rel="stylesheet" href="styles.css"> 
-  <script src="scripts.js" defer></script> 
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header>
@@ -35,30 +35,8 @@
           <th>Live Score</th>
         </tr>
       </thead>
-      <tbody>
-        <tr id="match-1">
-          <td>January 20, 2025</td>
-          <td>Team A</td>
-          <td>Team B</td>
-          <td>3:00 PM</td>
-          <td>Soccer Field 1</td>
-          <td>
-            <span id="score-1">0 - 0</span> 
-            <button class="update-score" data-match="1">Update Score</button>
-          </td>
-        </tr>
-        <tr id="match-2">
-          <td>January 27, 2025</td>
-          <td>Team C</td>
-          <td>Team D</td>
-          <td>4:30 PM</td>
-          <td>Soccer Field 2</td>
-          <td>
-            <span id="score-2">0 - 0</span>
-            <button class="update-score" data-match="2">Update Score</button>
-          </td>
-        </tr>
-        <!-- Add more fixtures here -->
+      <tbody id="fixtures-table-body">
+        <!-- Fixtures will be dynamically added here -->
       </tbody>
     </table>
   </div>

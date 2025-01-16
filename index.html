@@ -4,12 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>League Soccer</title>
-  <link rel="stylesheet" href="styles.css"> 
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+    }
+    .logo {
+      max-width: 50px;
+      height: auto;
+      margin-right: 20px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+    h1 {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Nala Mahlala Charity Cup 2025</h1>
-    <nav>
+    <div style="display: flex; align-items: center;">
+      <img src="team-emblem.png" alt="Team Emblem" class="logo">
+      <h1>Nala Mahlala Charity Cup 2025</h1>
+    </div>
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="register.html">Registration</a>
       <a href="fixtures.html">Fixtures</a>
