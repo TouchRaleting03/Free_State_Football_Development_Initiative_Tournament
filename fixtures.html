@@ -6,10 +6,30 @@
   <title>Fixtures - Junior League Soccer</title>
   <link rel="stylesheet" href="styles.css">
   <script src="scripts.js" defer></script>
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: #f4f4f4;
+    }
+    .logo {
+      max-width: 50px;
+      height: auto;
+      margin-right: 20px;
+    }
+    h1 {
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Junior League Soccer</h1>
+    <div style="display: flex; align-items: center;">
+      <img src="images/Logo.jpeg" alt="Team Logo" class="logo">
+      <h1>Free State Soccer Tournament</h1>
+    </div>
     <nav>
       <a href="index.html">Home</a>
       <a href="register.html">Registration</a>
@@ -30,19 +50,17 @@
           <th>Match Date</th>
           <th>Team A</th>
           <th>Team B</th>
-          <th>Time</th>
-          <th>Location</th>
-          <th>Live Score</th>
+          <th>Score</th>
         </tr>
       </thead>
-      <tbody id="fixtures-table-body">
-        <!-- Fixtures will be dynamically added here -->
+      <tbody>
+        <!-- Fixture rows will go here -->
       </tbody>
     </table>
   </div>
 
   <footer>
-    <p>Contact us at <a href="mailto:info@NalaMahlalaCharity.com">info@NalaMahlalaCharity.com</a></p>
+    <p>Contact us at <a href="mailto:info@NalaMahlalaCharity.com">info@NalaMahlalaCharity.com</a> | Follow us on social media</p>
   </footer>
 </body>
 </html>
