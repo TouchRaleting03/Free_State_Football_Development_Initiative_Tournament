@@ -1,4 +1,3 @@
-
 function updateScore(matchId) {
     const scoreElement = document.getElementById(`score-${matchId}`);
     let [teamAScore, teamBScore] = scoreElement.innerText.split(" - ").map(Number);
@@ -97,32 +96,33 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => console.error("Error fetching fixtures:", error));
 });
-document.getElementById('registration-form').addEventListener('submit', async function (event) {
+document.getElementById('registration-form').addEventListener('submit', async function(event) {
   event.preventDefault();
 
-  const formData = new FormData(event.target);
-  const data = {
-    name: formData.get('name'),
-    email: formData.get('email'),
-    team: formData.get('team'),
-    position: formData.get('position'),
-  };
+  const form = event.target;
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData.entries());
 
   try {
-    const response = await fetch('http://localhost:3000/api/register', {
+    const response = await fetch('https://soccer-site.glitch.me/register', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     });
 
-    const result = await response.json();
-    alert(result.message); // Alert user that registration was successful
+    if (response.ok) {
+      document.getElementById('message').textContent = 'Registration successful!';
+      form.reset();
+    } else {
+      document.getElementById('message').textContent = 'Registration failed. Please try again.';
+    }
   } catch (error) {
-    alert("Error: " + error.message);
+    document.getElementById('message').textContent = 'An error occurred. Please try again.';
   }
-});// Wait for the DOM to be fully loaded
+});
+// Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("registration-form");
 
@@ -171,5 +171,31 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("An error occurred while submitting the form.");
         }
     });
+});
+
+// Fetch fixtures and update the table
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://soccer-site.glitch.me/fixtures')
+    .then((response) => response.json())
+    .then((fixtures) => {
+      const tableBody = document.getElementById('fixtures-table-body');
+      tableBody.innerHTML = '';
+
+      fixtures.forEach((fixture) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${fixture.home}</td>
+          <td>${fixture.away}</td>
+          <td>${fixture.date}</td>
+          <td>${fixture.score}</td>
+          <td>
+            <button class="update-score" data-match="${fixture.id}">Update Score</button>
+          </td>
+        `;
+
+        tableBody.appendChild(row);
+      });
+    })
+    .catch((error) => console.error('Error fetching fixtures:', error));
 });
 
