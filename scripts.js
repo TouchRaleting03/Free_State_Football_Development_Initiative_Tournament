@@ -99,18 +99,35 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById('registration-form').addEventListener('submit', async function(event) {
   event.preventDefault();
 
-  const form = event.target;
-  const formData = new FormData(form);
-  const data = Object.fromEntries(formData.entries());
+  // Gather form data
+  const formData = {
+    managerName: document.getElementById("manager-name").value,
+    numPlayers: document.getElementById("num-players").value,
+    team: document.getElementById("team").value,
+    teamColor: document.getElementById("team-color").value,
+    techTeamMembers: document.getElementById("tech-team-members").value,
+    headCoachName: document.getElementById("head-coach-name").value,
+    headCoachContact: document.getElementById("head-coach-contact").value,
+    terms: document.getElementById("terms").checked,
+  };
 
+  // Validate the terms checkbox
+  if (!formData.terms) {
+    alert("You must agree to the terms and conditions.");
+    return;
+  }
+
+  // Send the form data to the backend using fetch API
   try {
-    const response = await fetch('https://soccer-site.glitch.me/register', {
-      method: 'POST',
+    const response = await fetch("https://soccer-site.glitch.me/register", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(formData), // Convert form data to JSON format
     });
+
+    const data = await response.json();
 
     if (response.ok) {
       document.getElementById('message').textContent = 'Registration successful!';
