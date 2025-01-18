@@ -1,29 +1,26 @@
-const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
-const xlsx = require("xlsx");
-const fs = require("fs");
-const path = require("path");
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const xlsx = require('xlsx');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());  // Enable CORS for frontend-backend communication
-app.use(bodyParser.urlencoded({ extended: true }));  // Middleware to parse form data
-app.use(bodyParser.json());  // Middleware to parse JSON data
-app.use(express.static('public'));  // Serve static files (e.g., HTML, CSS)
+// Enable CORS for all routes
+app.use(cors());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(express.static('public'));
 
 // Route to handle form submission
 app.post('/register', (req, res) => {
-  const { managerName, numberOfPlayers, numberOfStaff, headCoachName, headCoachContact, terms } = req.body;
+  const { managerName, numPlayers, team, teamColor, techTeamMembers, headCoachName, headCoachContact, terms } = req.body;
 
   // Log the form data to the console
-  console.log('Manager Name:', managerName);
-  console.log('Number of Players:', numberOfPlayers);
-  console.log('Number of Technical Staff:', numberOfStaff);
-  console.log('Head Coach Name:', headCoachName);
-  console.log('Head Coach Contact:', headCoachContact);
-  console.log('Terms Accepted:', terms);
+  console.log('Received registration data:', req.body);
 
   const filePath = './registrations.xlsx';
   let workbook;
@@ -37,7 +34,7 @@ app.post('/register', (req, res) => {
     // Convert the worksheet to JSON
     const jsonData = xlsx.utils.sheet_to_json(worksheet, { header: 1 });
     // Append the new data
-    jsonData.push([managerName, numberOfPlayers, numberOfStaff, headCoachName, headCoachContact, terms]);
+    jsonData.push([managerName, numPlayers, team, teamColor, techTeamMembers, headCoachName, headCoachContact, terms]);
     // Convert the JSON back to a worksheet
     worksheet = xlsx.utils.aoa_to_sheet(jsonData);
     // Update the existing worksheet
@@ -46,8 +43,8 @@ app.post('/register', (req, res) => {
     // Create a new workbook and worksheet
     workbook = xlsx.utils.book_new();
     const worksheetData = [
-      ['Manager Name', 'Number of Players', 'Number of Technical Staff', 'Head Coach Name', 'Head Coach Contact', 'Terms Accepted'],
-      [managerName, numberOfPlayers, numberOfStaff, headCoachName, headCoachContact, terms]
+      ['Manager Name', 'Number of Players', 'Team', 'Team Color', 'Technical Team Members', 'Head Coach Name', 'Head Coach Contact', 'Terms Accepted'],
+      [managerName, numPlayers, team, teamColor, techTeamMembers, headCoachName, headCoachContact, terms]
     ];
     worksheet = xlsx.utils.aoa_to_sheet(worksheetData);
     // Append the worksheet to the workbook
@@ -59,6 +56,19 @@ app.post('/register', (req, res) => {
 
   // Send a response back to the client
   res.send('Registration successful!');
+});
+
+// Route to get registration data
+app.get('/api/fixtures', (req, res) => {
+    const filePath = './registrations.xlsx';
+    if (fs.existsSync(filePath)) {
+        const workbook = xlsx.readFile(filePath);
+        const worksheet = workbook.Sheets['Registrations'];
+        const jsonData = xlsx.utils.sheet_to_json(worksheet);
+        res.json(jsonData);
+    } else {
+        res.status(404).send('No registrations found');
+    }
 });
 
 // Route to download the Excel file
@@ -74,6 +84,11 @@ app.get('/download', (req, res) => {
   } else {
     res.status(404).send('File not found');
   }
+});
+
+// Route to serve the index.html file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Start the server
