@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary-color: #111317;
-  --primary-color-light: #1f2125;
-  --primary-color-extra-light: #35373b;
-  --secondary-color: #f9ac54;
-  --secondary-color-dark: #d79447;
+  --primary-color: rgba(17, 19, 23, 0.8); /* Semi-transparent primary color */
+  --primary-color-light: rgba(31, 33, 37, 0.8); /* Semi-transparent light primary color */
+  --primary-color-extra-light: rgba(53, 55, 59, 0.8); /* Semi-transparent extra light primary color */
+  --secondary-color: rgba(249, 172, 84, 0.8); /* Semi-transparent secondary color */
+  --secondary-color-dark: rgba(215, 148, 71, 0.8); /* Semi-transparent dark secondary color */
   --text-light: #d1d5db;
   --white: #ffffff;
   --max-width: 1200px;
@@ -20,7 +20,7 @@
 /* General Styles */
 body {
   font-family: "Poppins", sans-serif;
-  background-color: var(--primary-color);
+  background: url('images/picture 5.jpeg') no-repeat center center/cover; /* Add background image */
   color: var(--text-light);
 }
 
@@ -68,7 +68,7 @@ nav a:hover {
 
 nav a.active {
   background-color: #1c2c5b; /* Dark blue */
-  color: white;
+  color: rgb(240, 17, 17);
 }
 
 .hero {
@@ -115,7 +115,7 @@ main {
 
 .content {
   padding: 20px;
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-light); /* Semi-transparent background */
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -123,7 +123,7 @@ main {
 
 .gallery {
   padding: 20px;
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-light); /* Semi-transparent background */
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -151,7 +151,7 @@ main {
 .gallery-item p {
   text-align: center;
   padding: 10px;
-  background-color: var(--primary-color-extra-light);
+  background-color: var(--primary-color-extra-light); /* Semi-transparent background */
   margin: 0;
 }
 
@@ -171,11 +171,11 @@ th, td {
 }
 
 tr:nth-child(even) {
-  background-color: var(--primary-color-extra-light);
+  background-color: var(--primary-color-extra-light); /* Semi-transparent background */
 }
 
 button {
-  background-color: var(--secondary-color);
+  background-color: var(--secondary-color); /* Semi-transparent background */
   color: var(--white);
   padding: 10px 20px;
   border: none;
@@ -186,11 +186,11 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-color-dark);
+  background-color: var(--secondary-color-dark); /* Semi-transparent background */
 }
 
 footer {
-  background-color: var(--primary-color-light);
+  background-color: var(--primary-color-light); /* Semi-transparent background */
   color: var(--white);
   text-align: center;
   padding: 20px 0;
