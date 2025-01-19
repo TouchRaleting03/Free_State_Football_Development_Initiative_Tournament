@@ -68,11 +68,11 @@ nav a:hover {
 
 nav a.active {
   background-color: #1c2c5b; /* Dark blue */
-  color: rgb(240, 17, 17);
+  color: rgb(247, 246, 246);
 }
 
 .hero {
-  background: url('images/hero.jpg') no-repeat center center/cover;
+
   color: var(--white);
   text-align: center;
   padding: 100px 20px;
