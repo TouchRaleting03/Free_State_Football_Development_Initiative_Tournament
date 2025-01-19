@@ -1,155 +1,257 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #111317;
+  --primary-color-light: #1f2125;
+  --primary-color-extra-light: #35373b;
+  --secondary-color: #f9ac54;
+  --secondary-color-dark: #d79447;
+  --text-light: #d1d5db;
+  --white: #ffffff;
+  --max-width: 1200px;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #d0e7f9; /* Light blue background */
-    color: #1c2c5b; /* Dark blue text */
-    line-height: 1.6;
-    padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-light);
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #f4f4f4;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--primary-color-light);
+  color: var(--white);
 }
 
-.logo {
-    max-width: 50px;
-    height: auto;
-    margin-right: 20px;
+header .logo {
+  max-width: 50px;
+  height: auto;
+  margin-right: 20px;
 }
 
-h1 {
-    margin: 0;
-    flex: 1;
+header h1 {
+  margin: 0;
 }
 
 nav {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
 nav a {
-    text-decoration: none;
-    color: #1c2c5b;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #6cabdd; /* Medium blue */
-    color: white;
+  background-color: var(--secondary-color-dark);
 }
 
 nav a.active {
-    background-color: #1c2c5b; /* Dark blue */
-    color: white;
+  background-color: #1c2c5b; /* Dark blue */
+  color: white;
+}
+
+.hero {
+  background: url('images/hero.jpg') no-repeat center center/cover;
+  color: var(--white);
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--text-light);
 }
 
 main {
-    margin-top: 20px;
+  margin-top: 20px;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.section__header {
+  margin-bottom: 1rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--white);
+}
+
+.section__subheader {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.content {
+  padding: 20px;
+  background-color: var(--primary-color-light);
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery {
+  padding: 20px;
+  background-color: var(--primary-color-light);
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery-item {
+  flex: 1 1 calc(25% - 20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item p {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--primary-color-extra-light);
+  margin: 0;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
 table, th, td {
-    border: 1px solid #1c2c5b; /* Dark blue border */
+  border: 1px solid var(--white);
 }
 
 th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background-color: #6cabdd; /* Medium blue */
-    color: white;
+  padding: 12px;
+  text-align: left;
 }
 
 tr:nth-child(even) {
-    background-color: #e1f0fa; /* Lighter blue */
+  background-color: var(--primary-color-extra-light);
 }
 
 button {
-    background-color: #1c2c5b; /* Dark blue */
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
+  background-color: var(--secondary-color);
+  color: var(--white);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #163a7d; /* Darker blue on hover */
+  background-color: var(--secondary-color-dark);
 }
 
 footer {
-    margin-top: 20px;
-    text-align: center;
+  background-color: var(--primary-color-light);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
 }
 
 footer a {
-    color: #1c2c5b; /* Dark blue */
-    text-decoration: none;
+  color: var(--white);
+  text-decoration: none;
 }
 
 footer a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    nav {
-        justify-content: center;
-        width: 100%;
-    }
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
 
-    nav a {
-        flex: 1;
-        text-align: center;
-    }
+  nav a {
+    flex: 1;
+    text-align: center;
+  }
 
-    table, th, td {
-        font-size: 14px;
-    }
+  table, th, td {
+    font-size: 14px;
+  }
 
-    button {
-        width: 100%;
-        text-align: center;
-    }
+  button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .gallery-grid {
+    flex-direction: column;
+  }
+
+  .gallery-item {
+    flex: 1 1 100%;
+  }
 }
 
 @media (max-width: 480px) {
-    th, td {
-        padding: 8px;
-    }
+  th, td {
+    padding: 8px;
+  }
 
-    table, th, td {
-        font-size: 12px;
-    }
+  table, th, td {
+    font-size: 12px;
+  }
 
-    button {
-        padding: 8px 10px;
-    }
+  button {
+    padding: 8px 10px;
+  }
 }
 
