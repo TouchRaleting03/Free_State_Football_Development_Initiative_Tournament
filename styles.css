@@ -88,6 +88,17 @@ nav a.active {
   color: var(--text-light);
 }
 
+.sponsor {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sponsor-logo {
+  max-width: 50px; /* Same size as the team logo */
+  height: auto;
+  margin-top: 10px;
+}
+
 main {
   margin-top: 20px;
 }
@@ -144,7 +155,8 @@ main {
 
 .gallery-item img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
   display: block;
 }
 
