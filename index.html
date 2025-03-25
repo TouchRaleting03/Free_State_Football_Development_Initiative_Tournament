@@ -5,15 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free State Football Development Initiative Tournament</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
   <header>
     <img src="images/Logo.jpeg" alt="Team Logo" class="logo">
     <h1>Free State Football Development Initiative Tournament</h1>
     <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="https://forms.gle/sie82vsxEdLDxdLBA" target="_blank">Registration</a>
-      <a href="rules.html" class="active">Rules</a>
+      <ul class="sidebar">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="fixtures.html" class="active">Fixtures</a></li>
+        <li><a href="rules.html" class="active">Rules</a></li>
+      </ul>
+      <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+      <div class="menu-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="fixtures.html" class="active">Fixtures</a>
+        <a href="rules.html" class="active">Rules</a>
+      </div>
     </nav>
   </header>
 
@@ -26,61 +35,58 @@
     </div>
   </div>
 
+  <div class="content">
+    <h2 class="section__header">Latest News</h2>
+    <p class="section__subheader">Join us for the 4th edition of the FSFDI tournament at the University of Free State</p>
+    <p>Tournament Date:<br>
+    Saturday, 29 March - Sunday, 30 March 2025</p>
+    <p>Registration closes Monday, 24 February 2025</p>
+  </div>
 
-    <div class="content">
-      <h2 class="section__header">Latest News</h2>
-      <p class="section__subheader">Join us for the 4th edition of the FSFDI tournament at the University of Free State</p>
-      
-      <p>Tournament Date:<br>
-      Saturday, 29 March - Sunday, 30 March 2025</p>
-      <p>Registration closes Monday, 24 February 2025</p>
-    </div>
-
-    <div class="gallery">
-      <h2 class="section__header">Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="images/picture 1.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 2.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 3.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 4.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 5.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 6.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 7.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 8.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 9.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 10.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 11.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 12.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 13.jpeg" alt="Tournament">
-        </div>
-        <div class="gallery-item">
-          <img src="images/picture 14.jpeg" alt="Tournament">
-        </div>
+  <div class="gallery">
+    <h2 class="section__header">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="images/picture 1.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 2.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 3.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 4.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 5.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 6.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 7.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 8.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 9.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 10.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 11.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 12.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 13.jpeg" alt="Tournament">
+      </div>
+      <div class="gallery-item">
+        <img src="images/picture 14.jpeg" alt="Tournament">
       </div>
     </div>
   </div>
@@ -88,6 +94,13 @@
   <footer>
     <p>&copy; 2025 Free State Football Development Initiative. All rights reserved.</p>
     <p>Contact us at <a href="mailto:Fsfditourney@gmail.com">Fsfditourney@gmail.com</a></p>
-</footer>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.menu-links');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>

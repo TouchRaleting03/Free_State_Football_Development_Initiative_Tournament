@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tournament Rules & Regulations</title>
     <link rel="stylesheet" href="styles.css"> 
+    <script src="index.js" defer></script>
 </head>
 <body>
 
 <header>
     <img src="images/Logo.jpeg" alt="Tournament Logo" class="logo">
     <h1>Tournament Rules</h1>
+    <nav>
+        <ul class="sidebar">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="fixtures.html" class="active">Fixtures</a></li>
+            <li><a href="rules.html" class="active">Rules</a></li>
+        </ul>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="menu-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="fixtures.html" class="active">Fixtures</a>
+            <a href="rules.html" class="active">Rules</a>
+        </div>
+    </nav>
 </header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="https://forms.gle/sie82vsxEdLDxdLBA" target="_blank">Registration</a>
-    <a href="rules.html" class="active">Rules</a>
-</nav>
 
 <main class="section__container">
     <div class="content">
@@ -73,6 +81,13 @@
     <p>&copy; 2025 Free State Football Development Initiative. All rights reserved.</p>
     <p>Contact us at <a href="mailto:Fsfditourney@gmail.com">Fsfditourney@gmail.com</a></p>
 </footer>
+
+<script>
+    function toggleMenu() {
+        const nav = document.querySelector('.menu-links');
+        nav.classList.toggle('active');
+    }
+</script>
 
 </body>
 </html>
